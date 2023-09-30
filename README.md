@@ -2,7 +2,7 @@
 
 ## Semantic Versioning 
 
-This project will use semantic versioning
+This project will use semantic versioning :mage:
 
 
 Given a version number MAJOR.MINOR.PATCH, increment the:

@@ -26,3 +26,31 @@ identity
     "Arn": "arn:aws:iam::22232434995:user/terraform-beginner-bootcamp"
 }
 ```
+
+# Terraform basics
+
+## Terraform Registry
+
+Providers and modules can be found here
+registry.terraform.io
+
+Providers are interfaces to APIs that allow you to make changes
+Modules are templates
+
+## Terraform Console
+
+#### Terraform init
+
+#### Terraform Plan
+
+Tells what changes will be made on apply. 
+Can be outputted 
+
+#### Terraform apply
+
+This will run a plan
+
+--auto-approve
+
+
+

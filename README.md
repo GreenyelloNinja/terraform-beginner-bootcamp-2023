@@ -40,6 +40,7 @@ Modules are templates
 ## Terraform Console
 
 #### Terraform init
+- run after each change
 
 #### Terraform Plan
 
@@ -47,6 +48,11 @@ Tells what changes will be made on apply.
 Can be outputted 
 
 #### Terraform apply
+
+#### Terraform Destroy
+This will destroy resources
+you can also use the auto approve here
+
 
 This will run a plan
 

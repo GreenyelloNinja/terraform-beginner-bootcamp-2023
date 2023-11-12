@@ -15,3 +15,39 @@ PROJECT_ROOT
 └── README.md - required for root modules
 ```
 https://developer.hashicorp.com/terraform/language/modules/develop/structure
+
+
+## Terraform Variables
+
+### Terraform Cloud Envar
+
+in TF we can set environment vars and terraform vars
+
+Env - those that would be entered in bash
+TF - those in the tfvars files
+
+The variables can be set to sensitive so they are not visible
+
+### Loading TF input Variables
+
+#### Var Flag
+We can use the '-var' flag to set an variable or override a preset var. 
+
+#### Var File flag
+
+- document
+
+#### terraform.tfvars
+
+this is the default variable folder
+
+#### auto.tfvars
+
+- document
+
+#### Order of variables
+
+- document which variables take precidents
+
+
+

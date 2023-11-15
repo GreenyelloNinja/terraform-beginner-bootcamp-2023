@@ -120,3 +120,27 @@ module "terrahouse_aws" {
 
 
 [Module sources](https://developer.hashicorp.com/terraform/language/modules/sources)
+
+
+## Considerations when using ChatGPT with TF
+
+LLMs may not have the most updated information. Examples may use deprecated commands. 
+
+## working with files in TF
+
+### Path Variable
+
+```tf
+resource "aws_s3_object" "index_html" {
+  bucket = aws_s3_bucket.website_bucket.bucket
+  key    = "index.html"
+  source = ${path.root}/public/index.html
+
+```
+In terraform there is a 'path' variable that allows us to acess local paths
+
+path.module
+path.root
+
+
+https://developer.hashicorp.com/terraform/language/expressions/references#filesystem-and-workspace-info

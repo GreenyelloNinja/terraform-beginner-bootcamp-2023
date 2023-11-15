@@ -22,3 +22,13 @@ variable "bucket_name" {
     error_message = "Bucket name must contain only lowercase letters, numbers, periods, and hyphens"
   }
 }
+
+variable "index_html_filepath" {
+  description = "File path for the index.html file"
+  type        = string
+}
+
+variable "error_html_filepath" {
+  description = "File path for the error.html file"
+  type        = string
+}

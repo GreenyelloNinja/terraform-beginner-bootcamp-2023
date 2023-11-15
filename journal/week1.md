@@ -70,3 +70,53 @@ Terraform import will allow you to restore some of the statefile but isn't alway
 ### Fix Manual Configuration 
 
 Running TF plan will put Inf back into expected state
+
+### Fix using Terraform Refresh
+
+```tf
+terraform apply -refresh-only -auto-approve
+```
+
+## Terraform Modules 
+
+Modules have to be declared in the Main.tf file
+
+```tf
+
+module "terrahouse_aws" {
+    source = "./modules/terrahouse_aws"
+    user_uuid = var.user_uuid
+    bucket_name = var.bucket_name
+}
+```
+
+### Terraform Module Structure
+
+It is recommended to place modules  in a modules directory
+
+## Passing Input Variables
+
+```tf
+module "terrahouse_aws" {
+    source = "./modules/terrahouse_aws"
+    user_uuid = var.user_uuid
+    bucket_name = var.bucket_name
+}
+
+
+```
+
+## Module Sources
+
+Using the source we can import the module from various places, e.g. local, Git, TF reg
+```tf
+
+module "terrahouse_aws" {
+    source = "./modules/terrahouse_aws"
+}
+
+
+```
+
+
+[Module sources](https://developer.hashicorp.com/terraform/language/modules/sources)

@@ -144,3 +144,8 @@ path.root
 
 
 https://developer.hashicorp.com/terraform/language/expressions/references#filesystem-and-workspace-info
+
+
+### Terraform Data Sources
+
+https://developer.hashicorp.com/terraform/language/data-sources

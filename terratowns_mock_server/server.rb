@@ -3,19 +3,36 @@ require 'json'
 require 'pry'
 require 'active_model'
 
+# we will mock having a state for this dev server by setting a Global Variable
+# you would never use a GV in reality
 $home = {}
 
+# this class includes validations from ActiveRecord
 class Home
+#https://guides.rubyonrails.org/active_model_basics.html
   include ActiveModel::Validations
+#create some virtual attributes
+# getter
+# setter
   attr_accessor :town, :name, :description, :domain_name, :content_version
-
-  validates :town, presence: true
+#https://guides.rubyonrails.org/active_record_validations.html
+#gamers-grotto
+  validates :town, presence: true, inclusion: { in: [
+    'cooker-cove',
+    'video-valley',
+    'the-nomad-pad',
+    'gamers-grotto', 
+    'melomaniac-mansion'  
+  ]}
+  #visible to all users
   validates :name, presence: true
+  #visible to all users
   validates :description, presence: true
+  #we want to lock this down to only from cloudfront
   validates :domain_name, 
     format: { with: /\.cloudfront\.net\z/, message: "domain must be from .cloudfront.net" }
     # uniqueness: true, 
-
+  #content version has to be an integer
   validates :content_version, numericality: { only_integer: true }
 end
 
@@ -184,5 +201,5 @@ class TerraTownsMockServer < Sinatra::Base
     { message: "House deleted successfully" }.to_json
   end
 end
-
+#this is what will run the server
 TerraTownsMockServer.run!
